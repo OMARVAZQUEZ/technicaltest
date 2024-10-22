@@ -1,3 +1,9 @@
+# technical test 
+archivos en /src
+que ejecuta codigo conversion de numeros romanos a decimal  en romanToInt.js
+codigo que imprime anagramas en groupAnagrams.js
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
