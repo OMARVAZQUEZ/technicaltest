@@ -1,23 +1,31 @@
 function groupAnagrams(words) {
-  const map = new Map();
+  const map = {};
 
   for (const word of words) {
-    const sortedWord = word.toLowerCase().split('').sort().join('');
+    const count = new Array(26).fill(0);
 
-    
-    if (!map.has(sortedWord)) {
-      map.set(sortedWord, []);
+    for (const char of word.toLowerCase()) {
+      count[char.charCodeAt(0) - "a".charCodeAt(0)]++;
     }
-    map.get(sortedWord).push(word);
+    const key = count.join("#");
+    if (!map[key]) {
+      map[key] = [];
+    }
+    map[key].push(word);
   }
 
-  
-  return Array.from(map.values());
+  return Object.values(map);
 }
 
-// Impresion groupAnagrams
-
-const words = ["listen", "silent", "enlist", "hello", "elloh", "world", "dolor"];
+const words = [
+  "listen",
+  "silent",
+  "enlist",
+  "hello",
+  "elloh",
+  "world",
+  "dolor",
+];
 
 console.log("Impresion groupAnagrams");
 console.log(groupAnagrams(words));
